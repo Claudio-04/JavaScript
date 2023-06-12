@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO10</title>
+</head>
+<body>
+    <script>
+        let salario = 1500;
+        let incrementoAnual = 0.1;
+        let salarioActual = salarioInicial;
+        let salarioPorAnio = [];
+        for( let i = 1; i <= 6; i++){
+            salarioActual += salarioActual * incrementoAnual;
+            salarioPorAnio.push(salarioActual);
+        }
+        document.write("Salario despues de 6 años: " + salarioActual.toFixed(2) + "<br>");
+        document.write("Salario por año:<br>");
+        for(let i = 0; i < salarioPorAnio.length; i++){
+            document.write("Año" + (i + 1) + ":Bs" + salarioPorAnio[i].toFixed(2) + "<br>");
+
+        }
+    </script>
+</body>
+</html>
