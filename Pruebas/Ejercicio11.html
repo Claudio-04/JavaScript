@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO10</title>
+</head>
+
+<body>
+    <script>
+
+        function calcularInversionFinal(cantidadInicial, interesAnual, meses, numeroDeAnios) {
+            let inversionFinal = cantidadInicial;
+
+            for (let anio = 1; anio <= numeroDeAnios; anio++) {
+                for (let mes = 1; mes <= meses; mes++) {
+                    // Calcular el interés mensual y sumarlo a la inversión final
+                    let interesMensual = (inversionFinal * interesAnual) / 12;
+                    inversionFinal += interesMensual;
+                }
+            }
+
+            return inversionFinal.toFixed(2); // Redondear el resultado a 2 decimales
+        }
+
+        // Solicitar la cantidad de pesos al usuario
+        const cantidadInicial = parseFloat(prompt("Ingrese la cantidad de pesos:"));
+
+        // Solicitar el número de años al usuario
+        const numeroDeAnios = parseInt(prompt("Ingrese el número de años:"));
+
+        const interesAnual = 0.1; // Tasa de interés anual (10%)
+        const meses = 12; // Número de meses en un año
+
+        const inversionFinal = calcularInversionFinal(cantidadInicial, interesAnual, meses, numeroDeAnios);
+        document.write("Inversión final después de " + numeroDeAnios + " años: " + inversionFinal);
+
+
+    </script>
+</body>
+
+</html>
